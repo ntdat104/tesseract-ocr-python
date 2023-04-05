@@ -11,6 +11,6 @@ def extract_text_from_pdf(pdf_path):
     
     return text
 
-pdf_path = '../pdf/Bao_cao_tai_chinh_Hop_nhat_Kiem_toan_nam_2022.pdf'
+pdf_path = './pdf/test.pdf'
 text = extract_text_from_pdf(pdf_path)
 print(text)
