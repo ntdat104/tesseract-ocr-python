@@ -10,7 +10,7 @@ def convert_pdf_to_images(pdf_path, output_folder):
     for i, img in enumerate(images):
         img.save(f"{output_folder}/page_{i + 1}.png", "PNG")
 
-pdf_path = './pdf/hpg.pdf'
+pdf_path = 'pdf/hpg.pdf'
 output_folder = './images'
 convert_pdf_to_images(pdf_path, output_folder)
 
