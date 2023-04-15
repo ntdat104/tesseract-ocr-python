@@ -4,6 +4,9 @@ import pytesseract
 import argparse
 import cv2
 import os
+import pandas as pd
+import re
+from converter import convert_string_to_metadata
 
 pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
  
@@ -43,10 +46,15 @@ os.remove(filename)
 
 # In dòng chữ nhận dạng được
 print(text)
- 
+print(text.split("\n"))
+
+print(convert_string_to_metadata(text))
+# with open('test.csv', 'w') as f:
+#     f.write('tôi là đạt,test2,test3\ntest4,test5,test6')
+
 # Hiển thị các ảnh chúng ta đã xử lý.
-cv2.imshow("Image", image)
-cv2.imshow("Output", gray)
+# cv2.imshow("Image", image)
+# cv2.imshow("Output", gray)
 
 # Đợi chúng ta gõ phím bất kỳ
-cv2.waitKey(0)
+# cv2.waitKey(0)
