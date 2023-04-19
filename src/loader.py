@@ -1,10 +1,11 @@
 import cv2
 import os
+from progressbar import print_progress_bar
 
 # Đọc nhiều ảnh từ folder
 def load_images_from_folder(folder):
     images = []
-    for filename in os.listdir(folder):
+    for index ,filename in enumerate(os.listdir(folder)):
         # Đọc ảnh
         img = cv2.imread(os.path.join(folder,filename))
 
@@ -16,5 +17,6 @@ def load_images_from_folder(folder):
 
         if img is not None:
             images.append(img)
+        print_progress_bar(index, len(os.listdir(folder)), "LOAD_IMAGES_FROM_FOLDER")
 
     return images

@@ -22,9 +22,11 @@ for key in json_data:
 
 df = pd.DataFrame({
     'ma-so': code,
-    'column_1': column_1,
+    # 'column_1': column_1,
     'column_2': column_2,
     'column_3': column_3,
 })
+
+df.to_csv('data.csv')
 
 print(df.to_string())
